@@ -8,9 +8,17 @@ Miembros:
 - Gerardo
 - Juan
 
-# Instrucciones
+# Entregas
 
-Instalar, numpy, opencv y ultralytics
+- **PDF**, es el fichero llamado `documento.pdf`
+- **Presentción**, el fichero llamado `presentación.pdf`
+- **Código**, el fichero llamado `seguimiento_yolo_final.py`, con instrucciones de como ejecutar más abajo en este documento
+
+El resultado de los videos procesados se pude ver en la carpeta `videos_procesados`
+
+# Instrucciones para ejecutar seguimiento_yolo_final.py
+
+Instalar, numpy, opencv y ultralytics, definidos en `requirements.txt`
 
 Para probarlo con la cámara web:
 
