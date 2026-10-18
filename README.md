@@ -10,8 +10,9 @@ Miembros:
 
 # Entregas
 
-- **PDF**, es el fichero llamado `documento.pdf`
-- **Presentción**, el fichero llamado `presentación.pdf`
+- **PDF**, es el fichero llamado `actividad
+- .pdf`
+- **Presentción**, el fichero llamado `presentacion.pdf`
 - **Código**, el fichero llamado `seguimiento_yolo_final.py`, con instrucciones de como ejecutar más abajo en este documento
 
 El resultado de los videos procesados se pude ver en la carpeta `videos_procesados`
