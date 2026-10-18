@@ -1,0 +1,7 @@
+# seguimiento_yolo_final.py - dependencias
+# Instalación:  pip install -r requirements.txt
+
+ultralytics>=8.4.0   # YOLO26 (yolo26n.pt) y trackers; instala también PyTorch
+opencv-python>=4.5   # captura de vídeo y dibujo en pantalla
+numpy>=1.23
+lap>=0.5.12          # asignación usada por ByteTrack / BoT-SORT
