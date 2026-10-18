@@ -10,8 +10,7 @@ Miembros:
 
 # Entregas
 
-- **PDF**, es el fichero llamado `actividad
-- .pdf`
+- **PDF**, es el fichero llamado `actividad.pdf`
 - **Presentción**, el fichero llamado `presentacion.pdf`
 - **Código**, el fichero llamado `seguimiento_yolo_final.py`, con instrucciones de como ejecutar más abajo en este documento
 
