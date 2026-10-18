@@ -62,11 +62,11 @@ VENTANA_S = 0.5        # segundos de historial usados para calcular el movimient
 HISTORIAL_MIN_S = 0.3  # segundos mínimos de historial antes de dar una medida
 # Movimiento lateral (px/s). Dos umbrales distintos (histéresis) evitan que un
 # objeto lento parpadee entre "quieto" y "en movimiento".
-UMBRAL_MOVIL = 40      # px/s: por encima, pasa a "en movimiento"
+UMBRAL_MOVIL = 20      # px/s: 40 por encima, pasa a "en movimiento"
 UMBRAL_QUIETO = 10     # px/s: 25 por debajo, vuelve a "quieto"
 # Movimiento en profundidad (ritmo de cambio de tamaño, fracción por segundo)
-UMBRAL_PROF_MOVIL = 0.20    # 20 %/s: por encima, se acerca o se aleja
-UMBRAL_PROF_QUIETO = 0.12   # 12 %/s: por debajo, deja de considerarse
+UMBRAL_PROF_MOVIL = 0.20    # 0.20  20 %/s: por encima, se acerca o se aleja
+UMBRAL_PROF_QUIETO = 0.12   # 0.12  12 %/s: por debajo, deja de considerarse
 TTC_ALERTA_S = 2.0     # si el tiempo hasta el contacto baja de esto: alerta roja
 OLVIDAR_S = 4.0        # segundos sin ver un ID antes de borrar su historial
 LARGO_ESTELA = 30      # puntos de la estela dibujada
@@ -75,6 +75,7 @@ VISTA_MIN, VISTA_MAX, VISTA_PASO = 0.25, 3.0, 0.25
 IMGSZ_BASE = 640       # tamaño de entrada estándar de YOLO (reducción 1.0)
 GRIS = (160, 160, 160)
 ROJO = (0, 0, 255)
+GROSOR_ALERTA = 8
 
 
 def parse_args():
@@ -306,7 +307,11 @@ def main():
                 color_caja = ROJO if alerta else color
 
                 cv2.rectangle(pantalla, (sx1, sy1), (sx2, sy2), color_caja,
-                              4 if alerta else 2)
+                              GROSOR_ALERTA if alerta else 2)
+                if alerta:
+                    cv2.line(pantalla, (sx1, sy1), (sx2, sy2), color_caja, GROSOR_ALERTA)  # diagonal \
+                    cv2.line(pantalla, (sx2, sy1), (sx1, sy2), color_caja, GROSOR_ALERTA)  # diagonal /
+                
                 etiqueta(pantalla, f"{tid} {nombre}", (sx1 + 4, sy1 - 6),
                          color_caja, 0.55)
                 pts = np.array([P(m[1], m[2]) for m in hist], np.int32)
